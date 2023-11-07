@@ -1,4 +1,4 @@
-# Setup Git on new laptop
+# Setup Git and shell environment on new laptop
 
 - [Github and SSH](./github-ssh.md)
 
