@@ -1,0 +1,19 @@
+.clickable:active,
+button:active {
+  @apply translate-y-[2px] transition-all duration-150;
+}
+
+.focusable {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background;
+}
+
+/* copilot says */
+/* Active Chrome elements */
+:active {
+    background-color: hsl(210, 100%, 40%);
+}
+
+/* Active Firefox elements */
+::-moz-focus-inner:active {
+    background-color: hsl(205, 90%, 35%);
+}
