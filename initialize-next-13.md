@@ -1,6 +1,6 @@
 # Initialize a new Next.js 13 app using pnpm
 
-- auto-formatting
+- auto-formatting on every commit
 - Next 13 with src/app directory
 - shadcn/ui
 - Tailwind css
