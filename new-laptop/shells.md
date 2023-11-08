@@ -124,16 +124,15 @@ All brew packages are installed in the `opt/bin/` folder.
 You can find this with `brew --prefix`.
 
 or in terminal:
-
+(`command -s fish` finds the file location of each shell)
 ```sh
-echo $(brew --prefix)/bin/bash | sudo tee -a /private/etc/shells
-echo $(brew --prefix)/bin/fish | sudo tee -a /private/etc/shells
-
-# or manually
+echo $(command -s fish) | sudo tee -a /private/etc/shells
+echo $(command -s bash) | sudo tee -a /private/etc/shells
+```
+which is the same as doing:
+```sh
 echo /opt/homebrew/bin/bash | sudo tee -a /private/etc/shells
 echo /opt/homebrew/bin/fish | sudo tee -a /private/etc/shells
-
-sudo sh -c 'echo /opt/homebrew/bin/fish >> /etc/shells'
 ```
 
 After adding installed shells
