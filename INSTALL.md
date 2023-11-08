@@ -5,6 +5,11 @@
 - shadcn/ui
 - Tailwind css
 
+Copy and paste the following code into the terminal to initialize an opinionated Next app.
+The only interaction is for the` shadcn/ui` initialization.
+
+Assumes you have the [code command](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) for Visual Studio Code
+
 ```sh
 pnpm create next-app          \
     --app                     \
@@ -14,16 +19,14 @@ pnpm create next-app          \
     --tailwind                \
     --ts                      \
     --use-pnpm                \
-    nextjs-auth
+    my-app
 
-cd nextjs-auth
+cd my-app
 git add .
 git commit -m 'create Next app'
 code .
 
-# Add auto-formatting
-
-# The line with sed deletes the last line of `.hushy/pre-commit` to replace it with our actual command.
+# Add auto-formatting on commit
 
 pnpm add --save-dev --save-exact prettier
 pnpm add --save-dev @ianvs/prettier-plugin-sort-imports
@@ -43,21 +46,15 @@ pnpm pkg set scripts.format="prettier --write '**/*.{css,js,jsx,ts,tsx,json,md,m
 sed -i '' -e '$ d' .husky/pre-commit
 echo 'pnpm lint-staged' >> .husky/pre-commit
 echo 'pnpm-lock.yaml' >> .prettierignore
-
-# git add.
-git add .husky .prettierignore .prettierrc.js package.json pnpm-lock.yaml .lintstagedrc
-git commit -m 'add auto-format'
-pnpm format
 git add .
-git commit -m 'auto-format'
+pnpm format
+git commit -m 'add auto-format'
 
 # Add shadcn ui
 
+# select all defaults except choose src/app/globals.css for the globals.css location
 pnpm dlx shadcn-ui@latest init
-# select src/app
 pnpm dlx shadcn-ui add button
-
-# git add .
-git add components.json src/components/ui/button.tsx src/lib/utils.ts package.json pnpm-lock.yaml src/app/globals.css tailwind.config.js
+git add .
 git commit -m 'add shadcn'
 ```
