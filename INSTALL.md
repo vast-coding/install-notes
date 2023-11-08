@@ -1,4 +1,4 @@
-# Install a new Next.js 13 app using pnpm with
+# Initialize a new Next.js 13 app using pnpm
 
 - auto-formatting
 - Next 13 with src/app directory
