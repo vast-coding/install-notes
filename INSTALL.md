@@ -1,10 +1,4 @@
-# Install
-
-## Update pnpm 
-
-```sh
-brew install pnpm
-```
+# Install a new Next.js 13 app using pnpm with Tailwind, auto-formatting, shadcn ui, Clerk authentication.
 
 ## Create Next app
 
@@ -14,17 +8,16 @@ Without going through the CLI questions
 pnpm create next-app    \
     --app               \
     --eslint            \
-    --no-src-dir        \
+    --import-alias      \
+    --src-dir           \
     --tailwind          \
     --ts                \
     --use-pnpm          \
-    my-app-name
+    nextjs-auth
 
-cd my-app-name
-
+cd nextjs-auth
 git add .
 git commit -m 'create Next app'
-
 code .
 ```
 
@@ -44,10 +37,11 @@ sed -i '' -e '$ d' .husky/pre-commit
 echo 'pnpm lint-staged' >> .husky/pre-commit
 echo 'pnpm-lock.yaml' >> .prettierignore
 
-git add .husky .prettierignore .prettierrc.js package.json pnpm-lock.yaml.lintstagedrc
+# git add.
+git add .husky .prettierignore .prettierrc.js package.json pnpm-lock.yaml .lintstagedrc
 git commit -m 'add auto-format'
 ```
-
+gh repo create notes --private --source=. --remote=upstream
 ## Add shadcn ui
 
 ```sh
@@ -84,7 +78,7 @@ pnpm add @prisma/client
 pnpm exec prisma init
 ```
 
-after initialising model in `prisma/schema.prisma`
+after initializing model in `prisma/schema.prisma`
 
 ```sh
 pnpm dlx prisma generate
@@ -96,7 +90,7 @@ pnpm dlx prisma db push
 
 ## Add Clerk authentication
 
-Initialise App in Clerk website and then copy `.env` variables from Clerk website under dropdown: 
+Initialize App in Clerk website and then copy `.env` variables from Clerk website under dropdown: 
 `Developers/Api keys`
 
 ```sh

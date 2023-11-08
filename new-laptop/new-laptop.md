@@ -1,4 +1,4 @@
-# Setup Git and shell environment on new laptop
+# Setup Git and shell environment on new MacBook 2023
 
 - [Github and SSH](./github-ssh.md)
 
